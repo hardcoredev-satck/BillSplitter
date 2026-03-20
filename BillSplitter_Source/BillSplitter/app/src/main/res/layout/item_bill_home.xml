@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+            <TextView android:id="@+id/tvBillTitle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Bill Title"
+                android:textSize="16sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"/>
+            <TextView android:id="@+id/tvBillAmount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="$0.00" android:textSize="18sp" android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+            <TextView android:id="@+id/tvCategory"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"/>
+            <TextView android:id="@+id/tvBillDate"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="12sp" android:textColor="?attr/colorOnSurfaceVariant"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <com.google.android.material.chip.Chip android:id="@+id/chipStatus"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Active" android:textColor="@android:color/white"
+                android:textSize="11sp"/>
+            <TextView android:id="@+id/tvPaidBy"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginStart="8dp"/>
+            <Button android:id="@+id/btnSettle"
+                android:layout_width="wrap_content" android:layout_height="32dp"
+                android:text="Settle" android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TonalButton"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

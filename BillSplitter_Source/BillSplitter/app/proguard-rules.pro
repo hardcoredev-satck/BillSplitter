@@ -1,0 +1,2 @@
+-keep class com.darshit.billsplitter.data.model.** { *; }
+-keepattributes *Annotation*

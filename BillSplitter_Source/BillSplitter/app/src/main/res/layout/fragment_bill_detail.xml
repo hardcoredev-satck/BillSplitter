@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                <TextView android:id="@+id/tvDetailTitle"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Bill Title"
+                    android:textSize="22sp" android:textStyle="bold"
+                    android:textColor="@android:color/white"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDetailStatus"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Active" android:textColor="@android:color/white"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+            <TextView android:id="@+id/tvDetailAmount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="$0.00" android:textSize="40sp" android:textStyle="bold"
+                android:textColor="@android:color/white" android:layout_marginBottom="12dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:textColor="#CCFFFFFF" android:textSize="13sp"
+                    android:id="@+id/tvDetailCategory"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="#CCFFFFFF" android:textSize="13sp"
+                    android:id="@+id/tvDetailDate"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Bill info row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Paid by" android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView android:id="@+id/tvDetailPaidBy"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Split type" android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView android:id="@+id/tvDetailSplitType"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvDetailDescription"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Share button -->
+            <Button android:id="@+id/btnShareBill"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📤  Share Summary" android:layout_marginBottom="20dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+            <!-- Participants -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PARTICIPANTS" style="@style/SectionHeader" android:layout_marginBottom="8dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvParticipants"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Settlements -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SETTLEMENT PLAN" style="@style/SectionHeader" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvNoSettlements"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="No settlements needed 🎉"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" android:layout_marginBottom="8dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransactions"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
