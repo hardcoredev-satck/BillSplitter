@@ -27,13 +27,8 @@ jobs:
         with:
           gradle-version: '8.2'
 
-      - name: Show file structure
-        run: find . -maxdepth 3 -type f -name "*.gradle"
-
       - name: Build APK
-        run: |
-          cd BillSplitter
-          gradle assembleDebug --stacktrace
+        run: gradle assembleDebug --stacktrace
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
           ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
@@ -42,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BillSplitter-APK
-          path: BillSplitter/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
